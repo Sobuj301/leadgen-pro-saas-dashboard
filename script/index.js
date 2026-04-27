@@ -1,6 +1,8 @@
+//////////////////////////////
+// MOBILE MENU
+//////////////////////////////
 
-// Mobile toggle
-const btn = document.getElementById("menuBtn");
+const menuBtn = document.getElementById("menuBtn");
 const closeBtn = document.getElementById("closeBtn");
 const menu = document.getElementById("mobileMenu");
 const overlay = document.getElementById("overlay");
@@ -17,23 +19,32 @@ function closeMenu() {
   overlay.classList.add("hidden");
 }
 
-btn.addEventListener("click", openMenu);
+menuBtn.addEventListener("click", openMenu);
 closeBtn.addEventListener("click", closeMenu);
 overlay.addEventListener("click", closeMenu);
 
-// auto close on link click
 links.forEach(link => {
   link.addEventListener("click", closeMenu);
 });
 
 
-// SUCCESS POPUP
+//////////////////////////////
+// FORM SUBMIT + GOOGLE SHEETS
+//////////////////////////////
 
 const form = document.getElementById("leadForm");
 const popup = document.getElementById("successPopup");
+const submitBtn = document.getElementById("submitBtn");
+const spinner = document.getElementById("spinner");
+const btnText = document.getElementById("btnText");
 
 form.addEventListener("submit", async function (e) {
   e.preventDefault();
+
+  // loading state
+  submitBtn.disabled = true;
+  spinner.classList.remove("hidden");
+  btnText.textContent = "Submitting...";
 
   const data = {
     name: form.querySelector('input[placeholder="Your Name"]').value,
@@ -49,13 +60,9 @@ form.addEventListener("submit", async function (e) {
       mode: "no-cors"
     });
 
-    // show popup once
     popup.classList.remove("hidden");
-
-    // reset form
     form.reset();
 
-    // auto hide
     setTimeout(() => {
       popup.classList.add("hidden");
     }, 3000);
@@ -64,6 +71,9 @@ form.addEventListener("submit", async function (e) {
     alert("Something went wrong!");
     console.error(error);
   }
+
+  // reset button
+  submitBtn.disabled = false;
+  spinner.classList.add("hidden");
+  btnText.textContent = "Get Started Now";
 });
-
-
