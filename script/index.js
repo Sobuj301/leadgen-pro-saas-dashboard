@@ -77,3 +77,33 @@ form.addEventListener("submit", async function (e) {
   spinner.classList.add("hidden");
   btnText.textContent = "Get Started Now";
 });
+
+
+// faq
+
+const items = document.querySelectorAll(".faq-item");
+
+items.forEach(item => {
+    item.addEventListener("click", () => {
+
+        // close others
+        items.forEach(i => {
+            if (i !== item) {
+                i.querySelector(".faq-content").style.maxHeight = null;
+                i.querySelector(".faq-icon").textContent = "+";
+            }
+        });
+
+        const content = item.querySelector(".faq-content");
+        const icon = item.querySelector(".faq-icon");
+
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            icon.textContent = "+";
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon.textContent = "−";
+        }
+
+    });
+});
