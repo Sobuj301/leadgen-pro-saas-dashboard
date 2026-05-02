@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/output.css">
+    <title>Dashboard </title>
+</head>
+
+<body class="bg-[#0E1022]">
+    <div class="h-screen bg-[#0E1022] text-white flex">
+
+        <!-- 📱 Sidebar -->
+        <aside class="w-64 fixed left-0 top-0 h-full bg-[#1a1d3a] p-5
+               transform -translate-x-full md:translate-x-0
+               transition-transform duration-300 z-50">
+
+            <h2 class="text-xl font-bold text-[#7BB100] mb-6">LeadGen</h2>
+
+            <nav class="space-y-4 text-sm">
+                <a href="#dashboard" class="block hover:text-[#7BB100]">Dashboard</a>
+                <a href="#leads" class="block hover:text-[#7BB100]">Leads</a>
+                <a href="#analytics" class="block hover:text-[#7BB100]">Analytics</a>
+                <a href="#settings" class="block hover:text-[#7BB100]">Settings</a>
+            </nav>
+        </aside>
+
+        <!-- 🧑‍💻 Main Area -->
+        <div class="flex-1 md:ml-64 w-full">
+
+            <!-- 🔝 Top bar -->
+            <header class="fixed top-0 left-0 md:left-64 right-0 h-16
+                   bg-[#0E1022] border-b border-white/10
+                   flex items-center justify-between px-4 md:px-6 z-50">
+
+                <!-- Mobile menu button (future toggle) -->
+                <div class="md:hidden text-xl">☰</div>
+
+                <h1 class="text-sm md:text-lg font-semibold">Dashboard</h1>
+
+                <input type="search" placeholder="Search..."
+                    class="hidden sm:block bg-[#1a1d3a] px-3 py-1 rounded border border-white/10 outline-none w-40 md:w-64" />
+
+                <div class="text-sm">🔔 Profile</div>
+            </header>
+
+            <!-- 📦 Content -->
+            <main class="pt-20 px-4">
+
+                <!-- DASHBOARD -->
+                <section id="dashboard" class="scroll-mt-24 min-h-screen space-y-6">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                        <div class="bg-[#1a1d3a] p-4 rounded">Card 1</div>
+                        <div class="bg-[#1a1d3a] p-4 rounded">Card 2</div>
+                        <div class="bg-[#1a1d3a] p-4 rounded">Card 3</div>
+
+                    </div>
+
+                    <div class="bg-[#1a1d3a] p-6 rounded">
+                        Main dashboard content here...
+                    </div>
+
+                </section>
+
+                <!-- LEADS -->
+                <section id="leads" class="min-h-screen scroll-mt-24 mt-10 space-y-6">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                        <div class="bg-[#1a1d3a] p-4 rounded">Card 1</div>
+                        <div class="bg-[#1a1d3a] p-4 rounded">Card 2</div>
+                        <div class="bg-[#1a1d3a] p-4 rounded">Card 3</div>
+
+                    </div>
+
+                    <div class="bg-[#1a1d3a] p-6 rounded">
+                        Leads content here...
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
