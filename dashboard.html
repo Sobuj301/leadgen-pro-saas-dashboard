@@ -11,7 +11,7 @@
 <body class="bg-[#0E1022]">
     <div class="h-screen bg-[#0E1022] text-white flex">
 
-        <!-- 📱 Sidebar -->
+        <!-- 📱Desktop Sidebar -->
         <aside class="w-64 fixed left-0 top-0 h-full bg-[#1a1d3a] p-5
                transform -translate-x-full md:translate-x-0
                transition-transform duration-300 z-50">
@@ -27,7 +27,7 @@
         </aside>
 
         <!-- 🧑‍💻 Main Area -->
-        <div class="flex-1 md:ml-64 w-full">
+        <div class="flex-1 md:ml-64 w-full relative">
 
             <!-- 🔝 Top bar -->
             <header class="fixed top-0 left-0 md:left-64 right-0 h-16
@@ -35,16 +35,47 @@
                    flex items-center justify-between px-4 md:px-6 z-50">
 
                 <!-- Mobile menu button (future toggle) -->
-                <div class="md:hidden text-xl">☰</div>
+                <div id="toggleBtn" class="md:hidden text-xl">
+                    <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="size-10">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+                    </svg>
+                    <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="size-10 hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+
+                </div>
 
                 <h1 class="text-sm md:text-lg font-semibold">Dashboard</h1>
 
                 <input type="search" placeholder="Search..."
                     class="hidden sm:block bg-[#1a1d3a] px-3 py-1 rounded border border-white/10 outline-none w-40 md:w-64" />
 
-                <div class="text-sm">🔔 Profile</div>
+                <div class="text-sm flex gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+                    </svg>
+                    <span>
+                        Profile
+                    </span>
+                </div>
             </header>
 
+            <!-- mobile device -->
+            <nav id="mobileMenu" class="hidden md:hidden absolute left-0 right-0 top-16
+           mx-4 rounded-xl bg-[#1a1d3a]
+           border border-white/10 shadow-lg
+           p-5 space-y-4 z-40">
+
+                <a href="#dashboard" class="block nav-link hover:text-[#7BB100]">Dashboard</a>
+                <a href="#leads" class="block nav-link hover:text-[#7BB100]">Leads</a>
+                <a href="#analytics" class="block nav-link hover:text-[#7BB100]">Analytics</a>
+                <a href="#settings" class="block nav-link hover:text-[#7BB100]">Settings</a>
+            </nav>
             <!-- 📦 Content -->
             <main class="pt-20 px-4">
 
@@ -87,6 +118,9 @@
         </div>
 
     </div>
+
+
+    <script src="script/dashboard.js"></script>
 </body>
 
 </html>
